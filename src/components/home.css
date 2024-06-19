@@ -4,7 +4,9 @@
     padding: 0px;
     font-family: "Nunito Sans", Arial, sans-serif;
 }
-
+body{
+    overflow:hidden;
+}
 .vid-background {
 
     min-width: 100vh;
