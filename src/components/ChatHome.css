@@ -1,0 +1,19 @@
+.chat-body{
+    min-width:99vw;
+    min-height:99vh;
+    
+    background:red;
+    overflow:hidden;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    display:flex;
+    gap:1rem;
+    border-radius:5px;
+    
+}
+
+.chat{
+    flex:6;
+    /* overflow-y:scroll; */
+    max-height:100%;
+}
+
