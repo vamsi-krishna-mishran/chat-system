@@ -1,6 +1,6 @@
 # React + Vite UPDATE 2
 
-**site is live on http://23.22.6.75/**
+**site is live on http://23.22.6.75/** (background video loading may take some time)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
