@@ -4,16 +4,14 @@
     padding: 0px;
     font-family: "Nunito Sans", Arial, sans-serif;
 }
-body{
-    overflow:hidden;
-}
+
 .vid-background {
 
     min-width: 100vh;
     min-height: 100vh;
     display: flex;
     align-items: center;
-
+    overflow:hidden;
 }
 
 .vid-background::before {
