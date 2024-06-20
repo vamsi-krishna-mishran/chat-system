@@ -17,13 +17,13 @@ function Chat()
         <ReceiveMessage />
         <SendMessage />
         <ReceiveMessage />
-        <SendMessage />
+        {/* <SendMessage />
         <ReceiveMessage />
         <SendMessage />
         <ReceiveMessage />
         <SendMessage />
         <SendMessage />
-        <ReceiveMessage />
+        <ReceiveMessage /> */}
         {/* <SendMessage />
         <ReceiveMessage />
         <SendMessage />
@@ -36,14 +36,14 @@ function Chat()
 const ReceiveMessage = () =>
 {
   return <div className='receive-message'>
-    Hi bro.
+    <span>Hi bro.</span>
   </div>
 }
 
 const SendMessage = () =>
 {
   return <div className='send-message'>
-    Hi, how are you?
+    <span>Hi, how are you?</span>
   </div>
 }
 
