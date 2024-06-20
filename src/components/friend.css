@@ -39,7 +39,31 @@
     padding: 1rem 0.5rem;
     cursor: pointer;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2)
+    background: rgba(255, 255, 255, 0.2);
+    display:flex;
+    gap:0.5rem;
+    padding:0.5rem;
+    color:rgba(255,255,255,0.8);
+    font-weight:bold;
+}
+.one-friend:hover{
+    cursor:pointer;
+    background:#d1002f;
+    
+    
+}
+.one-friend.active{
+    background:#d1002c;
+    color:white;
+}
+.one-friend .img{
+    height:40px;
+    width:40px;
+    border:1px solid rgba(255,255,255,0.8);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 #normal_login_search {

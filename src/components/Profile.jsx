@@ -36,7 +36,7 @@ function Profile() {
     <div className='profile'>
       <h1>ChatVibe</h1>
       <div className='profile-name'>
-        <img src='' alt='V'/>
+        <span>V</span>
         <h3>Vamsi Krishna</h3>
         <b>vamsi@gmail.com</b>
         <hr/>

@@ -10,7 +10,7 @@
 }
 
 .profile>h1 {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-size: 30px;
 }
 
@@ -29,15 +29,25 @@
     line-height: 1.5rem;
 }
 
-.profile-name>img,
+.profile-name>span,
 .profile-name>h3 {
     text-align: center;
     align-self: center;
     line-height: 1.5rem;
 }
+.profile-name>span{
+    font-weight:bold;
+    color:red;
+    /* border:1px solid red; */
+    padding:1rem 1rem;
+    border-radius:50%;
+    font-size:35px;
+    margin-bottom:1rem;
+    background:rgba(255,255,255,0.2);
+}
 
 .profile-name>b {
-    margin: 2rem 0rem;
+    margin: 1rem 0rem;
 }
 
 hr {
