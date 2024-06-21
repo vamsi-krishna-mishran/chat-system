@@ -1,12 +1,13 @@
 import './ChatHome.css'
 import './Profile.css'
-import {
+import
+{
   SettingOutlined,
   MailOutlined,
   ProfileOutlined,
   LogoutOutlined
 } from '@ant-design/icons';
-import {  Menu,Badge } from 'antd';
+import { Menu, Badge } from 'antd';
 
 const items = [
   {
@@ -24,14 +25,19 @@ const items = [
     icon: <SettingOutlined />,
     label: 'Settings',
   }]
-const items2=[
+const items2 = [
   {
     key: '1',
-    icon: <LogoutOutlined/>,
+    icon: <LogoutOutlined />,
     label: 'Logout',
   },
 ]
-function Profile() {
+function Profile()
+{
+
+
+
+
   return (
     <div className='profile'>
       <h1>ChatVibe</h1>
@@ -39,30 +45,30 @@ function Profile() {
         <span>V</span>
         <h3>Vamsi Krishna</h3>
         <b>vamsi@gmail.com</b>
-        <hr/>
+        <hr />
       </div>
 
       <div className='tabs-wrapper'>
-            <div className='tabs'>
-            {/* <Badge count={5}> */}
-              <Menu
-                
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
-                
-                items={items}
-              />
-            {/* </Badge> */}
-            </div>
-            <div className='logout'>
-            <Menu
-             
-              defaultSelectedKeys={['1']}
-              
-              items={items2}
-            />
-            </div>
+        <div className='tabs'>
+          {/* <Badge count={5}> */}
+          <Menu
+
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+
+            items={items}
+          />
+          {/* </Badge> */}
         </div>
+        <div className='logout'>
+          <Menu
+
+            defaultSelectedKeys={['1']}
+
+            items={items2}
+          />
+        </div>
+      </div>
     </div>
   )
 }
