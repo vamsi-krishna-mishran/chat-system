@@ -11,7 +11,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .vid-background::before {
@@ -31,6 +31,7 @@
     position: fixed;
     top: 4.01rem;
     z-index: -1;
+    left: 0;
 }
 
 .nav-bar {
@@ -43,7 +44,7 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     color: white;
     font-weight: 700;
     font-size: 24px;
@@ -55,8 +56,9 @@
     color: #d1002c;
     font-size: 26px;
 }
-.nav-icon:hover{
-    cursor:pointer;
+
+.nav-icon:hover {
+    cursor: pointer;
 
     -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -92,19 +94,20 @@
 }
 
 .btn-container>button {
-    cursor:pointer;
+    cursor: pointer;
     padding: 0.6rem 0.8rem;
-    background:#b1002c;
-    border:none;
-    color:white;
-    margin-top:1rem;
-    font-weight:bold;
-    margin-right:1rem;
-    border-radius:5px;
-    transition:all 0.2s ease-in-out;
+    background: #b1002c;
+    border: none;
+    color: white;
+    margin-top: 1rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
 }
-.btn-container>button:hover{
-    transform:scale(1.05);
+
+.btn-container>button:hover {
+    transform: scale(1.05);
 }
 
 /* key frames  */

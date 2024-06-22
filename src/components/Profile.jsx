@@ -1,5 +1,8 @@
 import './ChatHome.css'
 import './Profile.css'
+import { useNavigate } from 'react-router-dom';
+import { message } from 'antd';
+
 import
 {
   SettingOutlined,
@@ -11,17 +14,17 @@ import { Menu, Badge } from 'antd';
 
 const items = [
   {
-    key: '1',
+    key: 'messages',
     icon: <MailOutlined />,
     label: 'Messages',
   },
   {
-    key: '2',
+    key: 'profile',
     icon: <ProfileOutlined />,
     label: 'Profile & Privacy',
   },
   {
-    key: '3',
+    key: 'settings',
     icon: <SettingOutlined />,
     label: 'Settings',
   }]
@@ -32,11 +35,16 @@ const items2 = [
     label: 'Logout',
   },
 ]
-function Profile()
+function Profile({ tab, setTab })
 {
 
-
-
+  const navigate = useNavigate();
+  const logout = (e) =>
+  {
+    console.log(e)
+    message.success("logged out successfully")
+    navigate('/');
+  }
 
   return (
     <div className='profile'>
@@ -53,16 +61,16 @@ function Profile()
           {/* <Badge count={5}> */}
           <Menu
 
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-
+            defaultSelectedKeys={[tab]}
+            defaultOpenKeys={[tab]}
+            onClick={(e) => setTab(e.key)}
             items={items}
           />
           {/* </Badge> */}
         </div>
         <div className='logout'>
           <Menu
-
+            onClick={logout}
             defaultSelectedKeys={['1']}
 
             items={items2}

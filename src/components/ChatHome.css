@@ -10,11 +10,16 @@
     border-radius: 5px;
 
 }
-.chat .ant-btn{
-    background:transparent !important;
-    border:none !important;
-    color:red !important;
+
+.chat .ant-btn {
+    background: transparent !important;
+    border: none !important;
+    color: red !important;
 }
-.ant-upload-wrapper{
-    color:rgba(255,255,255,0.8)
+
+.ant-upload-wrapper {
+    color: rgba(255, 255, 255, 0.8);
+    gap: 0.5rem;
+    display: flex !important;
+    flex-direction: column-reverse !important;
 }

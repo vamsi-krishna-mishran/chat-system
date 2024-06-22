@@ -1,6 +1,6 @@
 import './friend.css'
 import { SearchOutlined } from '@ant-design/icons';
-import { Form, Input } from 'antd';
+import { Form, Input, Menu } from 'antd';
 import { Children, useState } from 'react';
 // const list=[
 //   <RenderFriend/>,
@@ -12,19 +12,48 @@ import { Children, useState } from 'react';
 //   <RenderFriend/>,
 //   <RenderFriend/>
 // ]
-function Friend()
+
+const items = [
+  {
+    label: 'Friends',
+    key: 'friend',
+  },
+  {
+    label: 'Groups',
+    key: 'group',
+  },
+]
+function Friend({ setProfile })
 {
   const [user, setUser] = useState(1)
+  const [current, setCurrent] = useState('friend');
+  const onClick = (e) =>
+  {
+    console.log('click ', e);
+    setCurrent(e.key);
+    setUser(1);
+  };
   return (
     <div className='friend'>
       <h3>Chat</h3>
       <FormComp />
-      <div className='friend-wrap'>
-        <RenderFriend onClick={() => setUser(1)} selected={user == 1}>Vamsi</RenderFriend>
-        <RenderFriend onClick={() => setUser(2)} selected={user == 2}>Krishna</RenderFriend>
-        <RenderFriend onClick={() => setUser(3)} selected={user == 3}>Jani</RenderFriend>
+      <Menu className='active' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+      {current == 'friend' &&
+        <div className='friend-wrap'>
+          <RenderFriend onClick={() => { setUser(() => 1); setProfile(() => current + user.toString()); }} selected={user == 1}>Vamsi</RenderFriend>
+          <RenderFriend onClick={() => { setUser(() => 2); setProfile(() => current + user.toString()); }} selected={user == 2}>Krishna</RenderFriend>
+          <RenderFriend onClick={() => { setUser(() => 3); setProfile(() => current + user.toString()); }} selected={user == 3}>Jani</RenderFriend>
 
-      </div>
+        </div>
+      }
+      {current == 'group' &&
+        <div className='friend-wrap'>
+          <RenderFriend onClick={() => { setUser(() => 1); setProfile(() => current + user.toString()); }} selected={user == 1}>Group1</RenderFriend>
+          <RenderFriend onClick={() => { setUser(() => 2); setProfile(() => current + user.toString()); }} selected={user == 2}>Gropu2</RenderFriend>
+          <RenderFriend onClick={() => { setUser(() => 3); setProfile(() => current + user.toString()); }} selected={user == 3}>Romancham</RenderFriend>
+
+        </div>
+      }
     </div>
   )
 }

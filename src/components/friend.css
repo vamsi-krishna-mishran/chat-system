@@ -17,6 +17,46 @@
     ;
 }
 
+.friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+    border-radius: 5px;
+    padding: 0.1rem;
+    line-height: 35px;
+}
+
+.friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat::before {
+    content: none !important;
+}
+
+.friend .ant-menu-item-selected::after {
+    content: none !important;
+}
+
+.friend .ant-menu-submenu-open::after {
+    content: none !important;
+    border: none !important;
+}
+
+
+.friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat li {
+    flex: 1 !important;
+    color: white !important;
+    /* background-color: black; */
+    /* background-color: #d1002c !important; */
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.friend .ant-menu-item-selected {
+    background-color: #d1002c !important;
+}
+
 .friend #normal_login_search {
     border-bottom: none !important;
 
@@ -72,4 +112,24 @@
 
 #normal_login_search {
     color: black !important;
+}
+
+.profile :where(.css-dev-only-do-not-override-1fumvat).ant-menu-light.ant-menu-horizontal>.ant-menu-item:hover::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light>.ant-menu.ant-menu-horizontal>.ant-menu-item:hover::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light.ant-menu-horizontal>.ant-menu-submenu:hover::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light>.ant-menu.ant-menu-horizontal>.ant-menu-submenu:hover::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light.ant-menu-horizontal>.ant-menu-item-active::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light>.ant-menu.ant-menu-horizontal>.ant-menu-item-active::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light.ant-menu-horizontal>.ant-menu-submenu-active::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light>.ant-menu.ant-menu-horizontal>.ant-menu-submenu-active::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light.ant-menu-horizontal>.ant-menu-item-open::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light>.ant-menu.ant-menu-horizontal>.ant-menu-item-open::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light.ant-menu-horizontal>.ant-menu-submenu-open::after,
+:where(.css-dev-only-do-not-override-1fumvat).ant-menu-light>.ant-menu.ant-menu-horizontal>.ant-menu-submenu-open::after {
+    border: none !important;
+}
+
+.friend .ant-menu-item-active li::after {
+    border: none !important;
+    background-color: blue !important;
 }

@@ -2,21 +2,22 @@ import './chat.css'
 import { SendOutlined } from '@ant-design/icons'
 import UploadDoc from './UploadDoc'
 
-function Chat()
+function Chat({ profile })
 {
   return (
     <div className='chat'>
       <h3>Messages</h3>
       <hr />
       <div className='entry-msg'>
-        <UploadDoc/>
+        <UploadDoc />
         {/* <FileAddOutlined /> */}
-        
+
         <input type='text' placeholder='message here'></input>
         <SendOutlined />
 
       </div>
       <div className='render-msg'>
+        <h1>{profile}</h1>
         <ReceiveMessage />
         <SendMessage />
         <ReceiveMessage />
@@ -26,7 +27,7 @@ function Chat()
         <ReceiveMessage />
         <SendMessage />
         <SendMessage />
-        <ReceiveMessage /> 
+        <ReceiveMessage />
         {/* {/* <SendMessage />
         <ReceiveMessage />
         <SendMessage />
