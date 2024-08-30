@@ -19,11 +19,13 @@ function ChatHome()
 
 function ChatFriend()
 {
-    const [profile, setProfile] = useState('U-profile1')
-    alert(profile)
+    const [profile, setProfile] = useState(null)
+    //alert(profile)
+
     return (
         <>
-            <Chat profile={profile} />
+            {profile != null ? <Chat profile={profile} /> : <div className='chat set-center'>Select a user to view chat</div>}
+
             <Friend setProfile={setProfile} />
         </>
     )

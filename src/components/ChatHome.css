@@ -23,3 +23,9 @@
     display: flex !important;
     flex-direction: column-reverse !important;
 }
+
+.set-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

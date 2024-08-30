@@ -1,7 +1,7 @@
 import './friend.css'
 import { SearchOutlined } from '@ant-design/icons';
 import { Form, Input, Menu } from 'antd';
-import { Children, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 // const list=[
 //   <RenderFriend/>,
 //   <RenderFriend/>,
@@ -23,46 +23,89 @@ const items = [
     key: 'group',
   },
 ]
+
+const friendlist2 = [{ id: 1, name: "vamsi" }, { id: 2, name: "krishna" }, { id: 3, name: "jani" }]
+const grouplist2 = [{ id: 4, name: "group1" }, { id: 5, name: "group2" }, { id: 6, name: "group3" }]
 function Friend({ setProfile })
 {
-  const [user, setUser] = useState(1)
+  const [friendlist, setFriendList] = useState(friendlist2)
+  const [grouplist, setGroupList] = useState(grouplist2)
+  const [user, setUser] = useState(null)
   const [current, setCurrent] = useState('friend');
+  //alert(current + user.toString())
+  // alert(current)
   const onClick = (e) =>
   {
     console.log('click ', e);
     setCurrent(e.key);
-    setUser(1);
+    //setUser(null);
   };
+  const handleChange = (curId) =>
+  {
+    setUser(() => curId);
+    if (!current || !user)
+      setProfile(null)
+    else
+      setProfile(() => (current + user.toString()))
+  }
+  useEffect(() =>
+  {
+    if (user == null || !current)
+    {
+      setProfile(null)
+    }
+    else
+    {
+      setProfile(() => (current + user.toString()))
+
+    }
+  }, [user])
   return (
     <div className='friend'>
       <h3>Chat</h3>
-      <FormComp />
+      <FormComp setGroupList={setGroupList} setFriendList={setFriendList} />
       <Menu className='active' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
       {current == 'friend' &&
         <div className='friend-wrap'>
-          <RenderFriend onClick={() => { setUser(() => 1); setProfile(() => current + user.toString()); }} selected={user == 1}>Vamsi</RenderFriend>
-          <RenderFriend onClick={() => { setUser(() => 2); setProfile(() => current + user.toString()); }} selected={user == 2}>Krishna</RenderFriend>
-          <RenderFriend onClick={() => { setUser(() => 3); setProfile(() => current + user.toString()); }} selected={user == 3}>Jani</RenderFriend>
+          {friendlist.map(friend =>
+          {
+            return <RenderFriend onClick={() => { handleChange(friend.id); }} selected={user == friend.id}>{friend.name}</RenderFriend>
+          })}
+          {/* <RenderFriend onClick={() => { handleChange(1); }} selected={user == 1}>Vamsi</RenderFriend>
+          <RenderFriend onClick={() => { handleChange(2); }} selected={user == 2}>Krishna</RenderFriend>
+          <RenderFriend onClick={() => { handleChange(3); }} selected={user == 3}>Jani</RenderFriend> */}
 
         </div>
       }
       {current == 'group' &&
         <div className='friend-wrap'>
-          <RenderFriend onClick={() => { setUser(() => 1); setProfile(() => current + user.toString()); }} selected={user == 1}>Group1</RenderFriend>
-          <RenderFriend onClick={() => { setUser(() => 2); setProfile(() => current + user.toString()); }} selected={user == 2}>Gropu2</RenderFriend>
-          <RenderFriend onClick={() => { setUser(() => 3); setProfile(() => current + user.toString()); }} selected={user == 3}>Romancham</RenderFriend>
-
+          {grouplist.map(friend =>
+          {
+            return <RenderFriend onClick={() => { handleChange(friend.id); }} selected={user == friend.id}>{friend.name}</RenderFriend>
+          })}
         </div>
       }
     </div>
   )
 }
-const FormComp = () =>
+const FormComp = ({ setGroupList, setFriendList }) =>
 {
-  const onFinish = (values) =>
+  const prevFriend = friendlist2
+  const prevGroup = grouplist2
+  const updateSearch = (e) =>
   {
-    console.log('Received values of form: ', values);
-  };
+    const curPtrn = e.target.value;
+    setGroupList(() =>
+    {
+      return prevGroup.filter(el => el.name.includes(curPtrn));
+
+    });
+    setFriendList(() =>
+    {
+      return prevFriend.filter(el => el.name.includes(curPtrn));
+    });
+  }
+
   return (
     <Form
       name="normal_login"
@@ -70,13 +113,13 @@ const FormComp = () =>
       initialValues={{
         remember: true,
       }}
-      onFinish={onFinish}
+
     >
       <Form.Item
         name="search"
 
       >
-        <Input style={{ borderBottom: 'none !important', color: 'black !important' }} prefix={<SearchOutlined className="site-form-item-icon" />} placeholder="search here" />
+        <Input autoComplete="off" onChange={updateSearch} style={{ borderBottom: 'none !important', color: 'black !important' }} prefix={<SearchOutlined className="site-form-item-icon" />} placeholder="search here" />
       </Form.Item>
 
 
