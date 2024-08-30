@@ -3,9 +3,10 @@ import { FileAddOutlined } from '@ant-design/icons';
 import { Button, Upload, Tooltip } from 'antd';
 import './chat.css'
 
-const UploadDoc = ({ setMessage }) =>
+const UploadDoc = ({ message, setMessage }) =>
 {
-  const [fileList, setFileList] = useState([]);
+  console.log(message.files)
+  const [fileList, setFileList] = useState(message.files);
   useEffect(() =>
   {
     setMessage((message) =>
@@ -15,6 +16,12 @@ const UploadDoc = ({ setMessage }) =>
       return cloneMessage
     })
   }, [fileList])
+
+  useEffect(() =>
+  {
+    setFileList(message.files)
+  }, [message])
+
   const props = {
     onRemove: (file) =>
     {

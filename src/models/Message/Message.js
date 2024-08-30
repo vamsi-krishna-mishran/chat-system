@@ -12,7 +12,7 @@ class Message
     isViewd;
 
 
-    constructor(messageId = null, sender = null, receiver = null, timeStamp = null, message = null, files = null, isDelivered = null, isViewd = null)
+    constructor(messageId = null, sender = null, receiver = null, timeStamp = null, message = "", files = [], isDelivered = null, isViewd = null)
     {
         this.messageId = messageId;
         this.sender = sender;
