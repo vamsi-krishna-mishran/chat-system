@@ -67,9 +67,9 @@ function Friend({ setProfile })
       <Menu className='active' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
       {current == 'friend' &&
         <div className='friend-wrap'>
-          {friendlist.map(friend =>
+          {friendlist.map((friend, ix) =>
           {
-            return <RenderFriend onClick={() => { handleChange(friend.id); }} selected={user == friend.id}>{friend.name}</RenderFriend>
+            return <RenderFriend key={ix} onClick={() => { handleChange(friend.id); }} selected={user == friend.id}>{friend.name}</RenderFriend>
           })}
           {/* <RenderFriend onClick={() => { handleChange(1); }} selected={user == 1}>Vamsi</RenderFriend>
           <RenderFriend onClick={() => { handleChange(2); }} selected={user == 2}>Krishna</RenderFriend>
@@ -79,9 +79,9 @@ function Friend({ setProfile })
       }
       {current == 'group' &&
         <div className='friend-wrap'>
-          {grouplist.map(friend =>
+          {grouplist.map((friend, ix) =>
           {
-            return <RenderFriend onClick={() => { handleChange(friend.id); }} selected={user == friend.id}>{friend.name}</RenderFriend>
+            return <RenderFriend key={ix} onClick={() => { handleChange(friend.id); }} selected={user == friend.id}>{friend.name}</RenderFriend>
           })}
         </div>
       }

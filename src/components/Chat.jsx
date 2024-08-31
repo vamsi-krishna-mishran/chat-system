@@ -5,6 +5,7 @@ import { Tooltip } from 'antd'
 import Loader from './Loader'
 import { useState, useEffect } from 'react'
 import { Message } from '../models/index.js'
+import MessageTemplate from './MessageTemplate.jsx'
 
 const userData = {
   "friend1": "vamsi",
@@ -19,13 +20,15 @@ function Chat({ profile })
 {
   const user = userData[profile]
 
+  const [messageList, setMessageList] = useState([])
+
   const [message, setMessage] = useState(new Message())
   console.log(message)
   const updateMessageText = (e) =>
   {
-    const copiedMessage = JSON.parse(JSON.stringify(message));
+    const copiedMessage = Object.assign(new Message(), message);//{ ...message }//JSON.parse(JSON.stringify(message));
     copiedMessage.message = e.target.value;
-
+    copiedMessage.files = message.files;
     setMessage(() => copiedMessage)
 
   }
@@ -33,7 +36,13 @@ function Chat({ profile })
   {
     console.log("send message cicked")
     console.log(message)
-    setMessage(() => new Message())
+    if (message.verifyMessage())
+    {
+      setMessageList(prev => [...prev, message])
+      setMessage(() => new Message())
+    }
+
+
   }
   useEffect(() =>
   {
@@ -63,7 +72,7 @@ function Chat({ profile })
       <div className='render-msg'>
         <h1>{user}</h1>
         {user ? <>
-          <ReceiveMessage />
+          {/* <ReceiveMessage />
           <SendMessage />
           <ReceiveMessage />
           <SendMessage />
@@ -72,7 +81,10 @@ function Chat({ profile })
           <ReceiveMessage />
           <SendMessage />
           <SendMessage />
-          <ReceiveMessage />
+          <ReceiveMessage /> */}
+          {
+            messageList.map((message, ix) => ix % 1 == 0 ? <SendMessage key={ix} message={message} /> : <ReceiveMessage key={ix} message={message} />)
+          }
         </> : <Loader />}
 
         {/* {/* <SendMessage />
@@ -91,10 +103,10 @@ const ReceiveMessage = () =>
   </div>
 }
 
-const SendMessage = () =>
+const SendMessage = ({ message }) =>
 {
   return <div className='send-message'>
-    <span>Hi, how are you?</span>
+    <MessageTemplate message={message} />
   </div>
 }
 

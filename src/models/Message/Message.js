@@ -58,6 +58,16 @@ class Message
     {
         return "OK"
     }
+    verifyMessage()
+    {
+        // Check if message is not null, undefined, or empty string
+        const isMessageValid = this.message !== null && this.message !== undefined && this.message.trim() !== "";
+
+        // Check if files is not null, undefined, or an empty array
+        const isFilesValid = this.files !== null && this.files !== undefined && Array.isArray(this.files) && this.files.length > 0;
+
+        return isMessageValid || isFilesValid;
+    }
 
 }
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FileAddOutlined } from '@ant-design/icons';
 import { Button, Upload, Tooltip } from 'antd';
 import './chat.css'
+import { Message } from '../models';
 
 const UploadDoc = ({ message, setMessage }) =>
 {
@@ -11,7 +12,7 @@ const UploadDoc = ({ message, setMessage }) =>
   {
     setMessage((message) =>
     {
-      const cloneMessage = JSON.parse(JSON.stringify(message));
+      const cloneMessage = Object.assign(new Message(), message);//JSON.parse(JSON.stringify(message));
       cloneMessage.files = fileList
       return cloneMessage
     })

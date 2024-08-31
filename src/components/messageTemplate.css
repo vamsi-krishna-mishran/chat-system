@@ -1,0 +1,32 @@
+.attachment {
+    /* margin: 1rem 0rem 0rem 0rem; */
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 2rem;
+    align-items: center;
+}
+
+.message-text {
+    margin: 0.2rem;
+}
+
+.drop-down {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    color: white;
+}
+
+.drop-down:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    ;
+}
