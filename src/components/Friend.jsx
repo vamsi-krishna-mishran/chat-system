@@ -1,17 +1,12 @@
 import './friend.css'
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined,UserAddOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { Form, Input, Menu } from 'antd';
 import { Children, useEffect, useState } from 'react';
-// const list=[
-//   <RenderFriend/>,
-//   <RenderFriend/>,
-//   <RenderFriend/>,
-//   <RenderFriend/>,
-//   <RenderFriend/>,
-//   <RenderFriend/>,
-//   <RenderFriend/>,
-//   <RenderFriend/>
-// ]
+import { FloatButton } from 'antd';
+import { useRef } from 'react';
+import Modal from './Modal';
+
+
 
 const items = [
   {
@@ -26,12 +21,16 @@ const items = [
 
 const friendlist2 = [{ id: 1, name: "vamsi" }, { id: 2, name: "krishna" }, { id: 3, name: "jani" }]
 const grouplist2 = [{ id: 4, name: "group1" }, { id: 5, name: "group2" }, { id: 6, name: "group3" }]
+
+
+
 function Friend({ setProfile })
 {
   const [friendlist, setFriendList] = useState(friendlist2)
   const [grouplist, setGroupList] = useState(grouplist2)
   const [user, setUser] = useState(null)
   const [current, setCurrent] = useState('friend');
+  const modalRef=useRef(null)
   //alert(current + user.toString())
   // alert(current)
   const onClick = (e) =>
@@ -48,6 +47,20 @@ function Friend({ setProfile })
     else
       setProfile(() => (current + user.toString()))
   }
+
+  const addGroupFriend=(e)=>{
+    if(modalRef){
+      modalRef.current.style.display='flex'
+    }
+  }
+  useEffect(() => {
+    const element = document.getElementById('my-modal-4');
+    if (element) {
+      modalRef.current = element; // Manually assign the element to the ref
+      
+    }
+  }, []);
+
   useEffect(() =>
   {
     if (user == null || !current)
@@ -60,6 +73,7 @@ function Friend({ setProfile })
 
     }
   }, [user])
+
   return (
     <div className='friend'>
       <h3>Chat</h3>
@@ -85,6 +99,20 @@ function Friend({ setProfile })
           })}
         </div>
       }
+      <FloatButton title={current=='friend'?'add new user':'create new group'}
+      icon={current=='friend'?<UserAddOutlined title='add new user' />:<UsergroupAddOutlined title='create new group'/>}
+      onClick={addGroupFriend}
+      style={{
+        insetInlineEnd: 84,
+      
+        backgroundColor:'var(--btn-color)',
+        transform:'scale(1.5)',
+        color:'white'
+      }}
+    />
+
+   <Modal createGroup={current=='group'}/>
+
     </div>
   )
 }
@@ -141,3 +169,7 @@ const RenderFriend = ({ children, onClick, selected }) =>
 
 }
 export default Friend
+
+
+
+

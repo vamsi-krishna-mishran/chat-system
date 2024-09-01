@@ -25,6 +25,25 @@ function FileTemplate({ file })
     {
         const opVal = +e.key
         console.log('Clicked item key:', opVal);
+        if(opVal==1){
+            //download the file..
+            if (file) {
+                const url = URL.createObjectURL(new Blob([file]));
+                console.log("Blob URL:", url);
+          
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = file.name; // Uses the original file name
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+          
+                console.log("Download initiated for:", file.name);
+              } else {
+                console.log("No file selected.");
+              }
+        }
         // Add additional logic based on the clicked item's key
     };
     const menu = (

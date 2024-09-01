@@ -1,3 +1,4 @@
 import NotFound from "./notfound/NotFound";
+import AddFriend from "./addfriend/AddFriend";
 
-export { NotFound }
+export { NotFound ,AddFriend}

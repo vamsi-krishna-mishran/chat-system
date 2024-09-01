@@ -3,7 +3,7 @@ import LogIn from './components/LogIn';
 import './components/home.css'
 import { useState } from 'react';
 import ChatHome from './components/ChatHome';
-import { NotFound } from './pages';
+import { AddFriend, NotFound } from './pages';
 import
 {
   BrowserRouter as Router,
@@ -11,14 +11,15 @@ import
   Route
 } from "react-router-dom";
 
-
 function App()
 {
 
   const [open, setOpen] = useState(0);
 
   return (
+
     <Router>
+      {/* <Modal createGroup={true}/> */}
       <Routes>
         <Route
           path="/"
@@ -28,6 +29,10 @@ function App()
           path="/chat"
           element={<ChatHome />}
         ></Route>
+        <Route path='/addfriend'
+               element={<AddFriend/>}>
+
+        </Route>
         <Route path="/*" element={<NotFound />}>
         </Route>
 

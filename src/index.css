@@ -11,7 +11,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --btn-color:rgba(255, 255, 255, 0.5);
+  --disable-btn:rgba(255,255,255,0.4);
 }
+
+  
+
 *{
   box-sizing:border-box;
   margin:0;

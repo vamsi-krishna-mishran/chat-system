@@ -1,0 +1,43 @@
+.my-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index:100;
+    justify-content: center;
+    align-items: center;
+}
+.my-modal.hide{
+    display: none;
+}
+
+.gradient-black2 {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    /* min-height: 80vh; */
+    display: inline-block;
+    min-width: 40%;
+    /* width:300px;  */
+    margin: auto;
+    padding: 3rem;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    /* position: fixed; */
+    /* top:4.2rem; */
+    left:30%;
+    z-index: 1;
+    border-radius: 5px;
+    overflow-y: scroll;
+    /* max-height: 90vh; */
+
+}
+.ant-float-btn-body{
+    background-color: var(--btn-color) !important;
+}
+
+.anticon{
+    color:white !important;
+}
