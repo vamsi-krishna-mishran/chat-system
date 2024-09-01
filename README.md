@@ -1,6 +1,11 @@
 # React + Vite UPDATE 2
 
-**site is live on http://18.234.88.71/** (background video loading may take some time)
+**development site is live @ https://chatsystem-pink.vercel.app/** (background video loading may take some time)
+<hr/>
+route "/" is the home or hero section to sign in and signup.
+<br/>
+route "/chat" is the protected route to chat with connections.
+<hr/>
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
