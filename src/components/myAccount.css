@@ -1,0 +1,102 @@
+.my-account-wrapper::after {
+    content: "";
+    position: absolute;
+    /* Position the pseudo-element absolutely */
+    left: 0;
+    right: 0;
+    height: 4rem;
+    background-color: brown;
+    z-index: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.my-account-wrapper {
+    position: relative;
+    /* background-color: red; */
+    /* min-height: 400px; */
+    border-radius: 10px;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    max-width: 400px;
+
+    ;
+    padding: 1rem;
+    padding-top: 0rem;
+    /* padding-top: 3rem; */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-profile {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 3.2rem;
+
+}
+
+.avatar-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    outline: 4px solid rgba(0, 0, 0, 0.8);
+    display: relative;
+    z-index: 4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    /* Optional subtle shadow */
+    /* Outer black border */
+}
+
+.edit-area {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* min-height: 200px; */
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    ;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit {
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
+    ;
+}
+
+.edit:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.left-area {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.left-area .key {
+    opacity: 0.8;
+    text-transform: uppercase;
+}
