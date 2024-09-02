@@ -3,13 +3,14 @@ import LogIn from './components/LogIn';
 import './components/home.css'
 import { useState } from 'react';
 import ChatHome from './components/ChatHome';
-import { AddFriend, NotFound } from './pages';
+import { AddFriend, NotFound ,NestedRoute} from './pages';
 import
 {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
+
 
 function App()
 {
@@ -26,8 +27,8 @@ function App()
           element={<Wrapper open={open} setOpen={setOpen} />}
         ></Route>
         <Route
-          path="/chat"
-          element={<ChatHome />}
+          path="/chat/*"
+          element={<NestedRoute />}
         ></Route>
         <Route path='/addfriend'
                element={<AddFriend/>}>

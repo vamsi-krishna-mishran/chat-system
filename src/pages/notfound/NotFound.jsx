@@ -10,7 +10,7 @@ function NotFound()
     }
     return (
         <>
-            <div>NotFound.
+            <div>path NotFound.
                 <b><button onClick={handleClick}>Back To Home</button></b>
             </div>
 

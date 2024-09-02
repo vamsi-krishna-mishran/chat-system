@@ -2,6 +2,7 @@ import './ChatHome.css'
 import './Profile.css'
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
+import { useEffect } from 'react';
 
 import
 {
@@ -45,6 +46,16 @@ function Profile({ tab, setTab })
     message.success("logged out successfully")
     navigate('/');
   }
+  useEffect(()=>{
+    //alert("/"+tab)
+    // if(!tab=='messages')
+    if(tab=='messages'){
+      navigate('/chat')
+    }
+    else{
+      navigate("/chat/"+tab)
+    }
+  },[tab])
 
   return (
     <div className='profile'>
