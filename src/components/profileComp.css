@@ -1,0 +1,15 @@
+
+.profile-comp{
+
+    flex:8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.setting-comp{
+    flex:8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

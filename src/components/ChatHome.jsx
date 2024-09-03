@@ -10,10 +10,10 @@ function ChatHome()
     const [tab, setTab] = useState('messages')
 
     return (
-        <div className="chat-body">
-            <Profile tab={tab} setTab={setTab} />
-            {tab == 'messages' ? <ChatFriend /> : null}
-        </div>
+        // <div className="chat-body">
+            // <Profile tab={tab} setTab={setTab} />
+            <ChatFriend />
+        // </div>
     )
 }
 
