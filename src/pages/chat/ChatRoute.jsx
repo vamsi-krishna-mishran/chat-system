@@ -7,6 +7,7 @@ import { useState } from "react";
 import Profile from "../../components/Profile";
 import ProfileComp from "../../components/ProfileComp";
 import SettingComp from "../../components/Setting";
+import MyAccount from "../../components/MyAccount";
 
 
 
@@ -38,8 +39,9 @@ const NestedRoute=()=>{
         <Routes>
             
             <Route path='/' element={<ChatHome/>}/>
-            <Route path='/profile' element={<ProfileComp/>}/>
+            <Route path='/profile' element={<MyAccount/>}/>
             <Route path='/settings' element={<SettingComp/>}/>
+            
 
             <Route path='/*' element={<NotFound/>}/>
         </Routes>
