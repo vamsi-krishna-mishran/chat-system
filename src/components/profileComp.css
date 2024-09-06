@@ -1,15 +1,59 @@
+.profile-comp {
 
-.profile-comp{
-
-    flex:8;
+    flex: 8;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.setting-comp{
-    flex:8;
+.setting-comp {
+    flex: 8;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    flex-direction: column;
+    gap: 2rem;
+    margin-right: 2rem;
 }
+
+
+
+.setting-comp * {
+    color: white;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+}
+
+.setting-comp .option * {
+
+    font-size: 80%;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    /* width: 100% !important; */
+}
+
+.setting-comp .ant-select-selector {
+    background: black !important;
+    border: 0px solid white !important;
+    border-radius: 1px !important;
+    line-height: 1.5rem !important;
+    min-height: 3rem !important;
+    box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+}
+
+.setting-comp .option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: stretch;
+
+}
+
+/* .setting-comp b {
+    color: white;
+    text-transform: uppercase;
+
+} */

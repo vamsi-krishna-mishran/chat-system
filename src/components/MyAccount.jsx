@@ -12,7 +12,7 @@ const MyAccount = () =>
     const [open, setOpen] = useState(false)
     return (
         <div className="wrap-account" >
-            <b className="title-bold">My Account</b>
+            <b className="title-bold">My profile</b>
             <div className="my-account-wrapper">
                 {/* <!-- <b>My Account</b> --> */}
                 <div className="user-profile">

@@ -15,15 +15,16 @@ import { Menu, Badge } from 'antd';
 
 const items = [
   {
-    key: 'messages',
-    icon: <MailOutlined />,
-    label: 'Messages',
-  },
-  {
     key: 'profile',
     icon: <ProfileOutlined />,
     label: 'Profile & Privacy',
   },
+  {
+    key: 'messages',
+    icon: <MailOutlined />,
+    label: 'Messages',
+  },
+
   {
     key: 'settings',
     icon: <SettingOutlined />,
@@ -46,16 +47,19 @@ function Profile({ tab, setTab })
     message.success("logged out successfully")
     navigate('/');
   }
-  useEffect(()=>{
+  useEffect(() =>
+  {
     //alert("/"+tab)
     // if(!tab=='messages')
-    if(tab=='messages'){
+    if (tab == 'messages')
+    {
       navigate('/chat')
     }
-    else{
-      navigate("/chat/"+tab)
+    else
+    {
+      navigate("/chat/" + tab)
     }
-  },[tab])
+  }, [tab])
 
   return (
     <div className='profile'>
