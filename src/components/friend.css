@@ -17,18 +17,23 @@
     ;
 }
 
-.friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat {
+/* .friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat { */
+.friend ul {
     background-color: rgba(255, 255, 255, 0.2) !important;
-    display: flex;
-    justify-content: space-between;
-    gap: 0.2rem;
-    border-radius: 5px;
-    padding: 0.1rem;
-    line-height: 35px;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 0.2rem !important;
+    border-radius: 5px !important;
+    padding: 0.1rem !important;
+    line-height: 35px !important;
 }
 
-.friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat::before {
+/* .friend .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light.css-dev-only-do-not-override-1fumvat::before { */
+.friend li {
     content: none !important;
+    border-radius: 5px !important;
+    color: white !important;
+    flex: 1 !important;
 }
 
 .friend .ant-menu-item-selected::after {

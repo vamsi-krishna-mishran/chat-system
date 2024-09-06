@@ -80,6 +80,7 @@ function Profile({ tab, setTab })
             defaultOpenKeys={[tab]}
             onClick={(e) => setTab(e.key)}
             items={items}
+
           />
           {/* </Badge> */}
         </div>
